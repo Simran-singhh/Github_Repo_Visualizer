@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const port = 5000;
+const port = process.env.PORT;
 
 app.set('view engine', 'ejs');
 
@@ -17,7 +17,7 @@ const homeRoutes = require("./routes/homepageRoutes");
 
 app.use("/",homeRoutes);
 
-app.listen(process.env.PORT||port, () => {
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
